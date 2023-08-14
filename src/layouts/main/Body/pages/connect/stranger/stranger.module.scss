@@ -1,0 +1,236 @@
+.container {
+    padding: 2.5% 0;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+    .avatar {
+        // border: 1px solid black;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+
+        img {
+            height: 180px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+    }
+
+    .info {
+        flex: 10;
+        padding: 1.25% 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .name {
+
+            p {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 700;
+                text-align: center;
+            }
+        }
+
+        .introduce {
+            width: 50%;
+            border: 1px solid #b5fafa;
+            padding: 1.5% 2%;
+            margin-top: 1.3%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 20px #b5fafa;
+
+            p {
+                margin: 0;
+
+                &:nth-child(1) {
+                    margin-bottom: 13px;
+                    font-size: 19px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .email {
+            width: 50%;
+            padding: 1.5% 2%;
+            margin-top: 1.3%;
+            display: flex;
+            border: 1px solid black;
+
+            p {
+                flex: 1;
+                margin: 0;
+                display: flex;
+                height: 100%;
+            }
+        }
+
+        .birth {
+            display: flex;
+            border: 1px solid black;
+            width: 50%;
+            padding: 1.5% 2%;
+            margin-top: 1px;
+
+            p {
+                margin: 0;
+                flex: 1;
+            }
+        }
+
+        .phone {
+            display: flex;
+            border: 1px solid black;
+            width: 50%;
+            padding: 1.5% 2%;
+            margin-top: 1px;
+
+            p {
+                margin: 0;
+                flex: 1;
+            }
+        }
+
+        .foreignURL {
+            display: flex;
+            border: 1px solid black;
+            width: 50%;
+            padding: 1.5% 2%;
+            margin-top: 1px;
+
+            p {
+                margin: 0;
+                flex: 1;
+            }
+
+            a {
+                margin: 0;
+                flex: 1;
+            }
+        }
+
+        .address {
+            display: flex;
+            border: 1px solid black;
+            width: 50%;
+            padding: 1.5% 2%;
+            margin-top: 1px;
+
+            p {
+                margin: 0;
+                flex: 1;
+            }
+        }
+    }
+
+    .tool {
+        flex: 1;
+        padding: 1.25% 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .center {
+            width: 30%;
+            border: 1px solid black;
+            display: flex;
+
+            p {
+                margin: 8px 0;
+            }
+
+            .status {
+                flex: 5;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+            }
+
+
+            .toggle {
+                flex: 1;
+                border: 1px solid black;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+            }
+
+
+        }
+
+        .sel {
+            p {
+                margin: 8px 0;
+            }
+
+            width: 30%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+
+            .select {
+                display: flex;
+                .rej {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    cursor: pointer;
+                    background-color: #ffe8e8;
+
+                    p {
+                        font-size: 15px;
+                    }
+                    &:hover{
+                        animation: rej 0.5s 1 ease-in-out forwards;
+                    }
+                    @keyframes rej {
+                        from{
+                            background-color: #ffe8e8;
+                        }
+                        to{
+                            background-color: #ff8a8a;
+                        }
+                    }
+                }
+
+                .acp {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    cursor: pointer;
+                    background-color: #e0fff0;
+
+                    p {
+                        font-size: 15px;
+                    }
+                    &:hover{
+                        animation: acp 0.5s 1 ease-in-out forwards;
+                    }
+                    @keyframes acp {
+                        from{
+                            background-color: #e0fff0;
+                        }
+                        to{
+                            background-color: #8aff9c;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

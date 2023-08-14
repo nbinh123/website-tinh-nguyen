@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 58%;
+    .main{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        .infoTag{
+            display: flex;
+            margin: 5px 0;
+            border-bottom: 1px solid black;
+            label{
+                flex: 1;
+                display: flex;
+                align-items: center;
+                padding: 0 15px;
+            }
+            input{
+                flex: 4;
+                padding: 8px 13px;
+                background-color: #c4fafa;
+                border: 0;
+                border-radius: 5px;
+                outline: none;
+            }
+        }
+    }
+}

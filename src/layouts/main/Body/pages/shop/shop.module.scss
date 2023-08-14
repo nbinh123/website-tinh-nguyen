@@ -1,0 +1,163 @@
+.container {
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%;
+
+    .main {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .productTag {
+            width: 30%;
+            height: auto;
+            border: 1px solid blanchedalmond;
+            border-radius: 8px;
+            margin: 5px 0;
+            display: flex;
+            position: relative;
+
+            .image {
+                width: 30%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                    aspect-ratio: 1;
+                    border-radius: 7px;
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+
+            .info {
+                width: 68%;
+                margin-left: 13px;
+
+                .quantity {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    
+                    
+
+                    .tool {
+                        width: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        border: 0.5px solid black;
+                        border-radius: 5px;
+
+
+                        .newQuanlity {
+                            flex: 3;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            .inputQuantity {
+                                width: 100%;
+                                text-align: center;
+                                outline: none;
+                                border: 0;
+                                background-color: transparent;
+                                font-size: 16px;
+                            }
+                        }
+
+                        .dec {
+                            flex: 1;
+                            padding: 9px;
+                            border-right: 0.5px solid black;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 5px;
+
+                            &:hover {
+                                animation: minus 0.5s 1 ease-in-out forwards;
+                            }
+                        }
+
+                        .inc {
+                            flex: 1;
+                            padding: 9px;
+                            border-left: 0.5px solid black;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 5px;
+
+                            &:hover {
+                                animation: plus 0.5s 1 ease-in-out forwards;
+                            }
+                        }
+                    }
+
+                    .submitQuantity {
+                        width: 7%;
+                        aspect-ratio: 1;
+                        margin-left: 13px;
+                        display: flex;
+                        justify-content: center;
+                        border: 1px solid black;
+                        padding: 3px;
+                        display: flex;
+                        align-items: center;
+                        transform: rotateZ(45deg);
+                        border-radius: 7px;
+                        cursor: pointer;
+                        svg{
+                            transform: rotateZ(-45deg);
+                        }
+                    }
+                    
+                      
+
+                }
+            }
+        }
+    }
+
+    .goToBill {
+        border: 1px solid black;
+        margin: 3% 0;
+        padding: 0 3%;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            animation: bill 1s 1 ease-in-out forwards;
+        }
+    }
+}
+
+
+@keyframes plus {
+    to {
+        background-color: #71ffd0;
+    }
+}
+
+@keyframes minus {
+    to {
+        background-color: #ff8ab1;
+    }
+}
+
+@keyframes bill {
+    to {
+        background-color: #8bb8ff;
+        color: white !important;
+    }
+}

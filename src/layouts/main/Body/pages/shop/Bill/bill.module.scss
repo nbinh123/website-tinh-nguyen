@@ -1,0 +1,347 @@
+.container {
+    padding: 5% 0;
+    width: 94%;
+
+    .contents {
+        display: flex;
+
+        .main {
+            flex: 1.86;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+
+            .tag {
+                display: flex;
+                width: 100%;
+
+                .productTag {
+                    flex: 3;
+                    height: auto;
+                    border: 1px solid blanchedalmond;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    display: flex;
+                    position: relative;
+
+                    .image {
+                        width: 17%;
+                        aspect-ratio: 1;
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            width: 100%;
+                            aspect-ratio: 1;
+                            border-radius: 7px;
+                            border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;
+                        }
+                    }
+
+                    .info {
+                        width: 68%;
+                        margin-left: 13px;
+
+                        .quantity {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+
+                            .tool {
+                                width: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+                                border: 0.5px solid black;
+                                border-radius: 5px;
+
+
+                                .newQuanlity {
+                                    flex: 3;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .inputQuantity {
+                                        width: 100%;
+                                        text-align: center;
+                                        outline: none;
+                                        border: 0;
+                                        background-color: transparent;
+                                        font-size: 16px;
+                                    }
+                                }
+
+                                .dec {
+                                    flex: 1;
+                                    padding: 9px;
+                                    border-right: 0.5px solid black;
+                                    cursor: pointer;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 5px;
+
+                                    &:hover {
+                                        animation: minus 0.5s 1 ease-in-out forwards;
+                                    }
+                                }
+
+                                .inc {
+                                    flex: 1;
+                                    padding: 9px;
+                                    border-left: 0.5px solid black;
+                                    cursor: pointer;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 5px;
+
+                                    &:hover {
+                                        animation: plus 0.5s 1 ease-in-out forwards;
+                                    }
+                                }
+                            }
+
+                            .submitQuantity {
+                                width: 7%;
+                                aspect-ratio: 1;
+                                margin-left: 13px;
+                                display: flex;
+                                justify-content: center;
+                                border: 1px solid black;
+                                padding: 3px;
+                                display: flex;
+                                align-items: center;
+                                transform: rotateZ(45deg);
+                                border-radius: 7px;
+                                cursor: pointer;
+
+                                svg {
+                                    transform: rotateZ(-45deg);
+                                }
+                            }
+
+
+
+                        }
+                    }
+                }
+
+                .arrow {
+                    flex: 0.6;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 22px;
+
+                }
+
+                .review {
+                    flex: 1;
+                    border: 0.5px solid blanchedalmond;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .reviewPrivate {
+                        .total {
+                            color: #7b5eb8;
+                            font-weight: 600;
+                            letter-spacing: 0.33px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .all {
+            display: flex;
+
+            .allTitle {
+                flex: 3.6;
+                border: 0.5px solid blanchedalmond;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                p {
+                    text-align: center;
+                    font-weight: 500;
+                    letter-spacing: 0.3px;
+                    font-size: 17px;
+                }
+            }
+
+            .cost {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 0.5px solid blanchedalmond;
+                border-bottom-right-radius: 8px;
+
+                .promote {
+                    font-size: 11px;
+                    color: #636363;
+                    text-decoration: line-through;
+                }
+
+                .lastCost {
+                    color: #00b02c;
+                }
+
+                p {
+                    text-align: center;
+                    margin: 0;
+                }
+            }
+        }
+
+        .options {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 0.5px solid blanchedalmond;
+            border-radius: 8px;
+            margin: 0 3%;
+
+            .titleOptions {
+                display: flex;
+                justify-content: center;
+            }
+
+            .mainOptions {
+                width: 90%;
+
+                .selectPromoteCodes {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+
+                    h4 {
+                        text-align: left;
+                        flex: 1;
+                    }
+
+                    .codes {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        animation: show 0.5s 1 ease-in-out forwards;
+
+                        .promoteCodeTag {
+                            background-color: white;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            border: 1px solid goldenrod;
+                            padding: 8px 13.8px;
+                            border: 1px solid blanchedalmond;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: #44b4ff;
+                                color: white;
+                            }
+                        }
+
+                        .condition {
+                            width: 280px;
+                            padding: 5px 8px;
+                            border: 1px solid black;
+                            background-color: aliceblue;
+                            animation: showConditions 0.5s 1 ease-in-out forwards;
+                        }
+                    }
+
+                }
+
+                .selectPaymentMethod {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+
+                    h4 {
+                        text-align: left;
+                        flex: 1;
+                    }
+
+                    .methods {
+                        padding: 8px 5px;
+                        display: "flex";
+                        border: 1px solid black;
+                        flex: 1;
+                        justify-content: "center";
+                        text-align: center;
+                    }
+
+                    .paymentMethod {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        animation: show 0.5s 1 ease-in-out forwards;
+
+                        .paymentTag {
+                            background-color: white;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            border: 1px solid goldenrod;
+                            padding: 8px 13.8px;
+                            border: 1px solid blanchedalmond;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: #44b4ff;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+option {
+    width: 100%;
+    height: 30px;
+}
+
+@keyframes show {
+    from {
+        transform: translateY(-150px);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+@keyframes showConditions {
+    from {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
