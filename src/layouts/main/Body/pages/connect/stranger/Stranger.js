@@ -9,11 +9,10 @@ import Button from "../../../../../components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faClockRotateLeft, faUserCheck, faUserPlus, faX } from "@fortawesome/free-solid-svg-icons";
 import postAPI from "../../../../../../server/axios/postAPI";
-import { response } from "express";
 
 function Stranger() {
 
-    const { userInformations, IP } = useContext(GlobalContext)
+    const { userInformations, IP, setUserInformations } = useContext(GlobalContext)
     const { id } = useParams()
     const [strangerData, setStrangerData] = useState(null)
     // console.log(userInformations._id)
@@ -69,7 +68,7 @@ function Stranger() {
     }
     function Tool() {
 
-        const isFriend = (strangerData?.friends.includes(userInformations._id))
+        const isFriend = (userInformations.friends.includes(id))
         const handleSomething = async () => {
             if (!isFriend && !strangerData?.waitingAddFriendResponse.includes(userInformations._id)) {
                 // gọi API để gửi lời mời kết bạn
@@ -92,15 +91,22 @@ function Stranger() {
         }
         const rejectFriendRequest = () => {
             // gọi API để hủy lời mời kết bạn
-            // postAPI(`http://${IP}:5000/api/user/friend/request/reject`, {
-            //     myId: userInformations._id,
-            //     theirId: id
-            // }, (response) => { 
-            //     console.log(response) 
-            // })
+            postAPI(`http://${IP}:5000/api/user/friend/request/reject`, {
+                myId: userInformations._id,
+                theirId: id
+            }, (response) => { 
+                setUserInformations(response)
+            })
         }
         const acceptFriendRequest = () => {
             // gọi API để đồng ý lời mời kết bạn
+            postAPI(`http://${IP}:5000/api/user/friend/request/accept`, {
+                myId: userInformations._id,
+                theirId: id
+            }, (response) => { 
+                setUserInformations(response)
+                console.log(response)
+            })
         }
 
         return (
@@ -114,7 +120,7 @@ function Stranger() {
                             <div className={styles.rej} onClick={rejectFriendRequest}>
                                 <p>Từ chối&nbsp;<FontAwesomeIcon icon={faX}/></p>
                             </div>
-                            <div className={styles.acp}>
+                            <div className={styles.acp} onClick={acceptFriendRequest}>
                                 <p>Đồng ý&nbsp;<FontAwesomeIcon icon={faCheck}/></p>
                             </div>
                         </div>

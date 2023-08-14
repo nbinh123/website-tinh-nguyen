@@ -474,23 +474,43 @@ class UserController {
 
 
     // // [POST]       /friend/request/accept
-    // accept_request_friend = async (req, res, next) => {
-
-    // }
+    accept_request_friend = async (req, res, next) => {
+        const { myId, theirId } = req.body
+        await UserSchema.findOneAndUpdate(
+            { _id: myId },
+            {
+                $push: {
+                    friends: theirId
+                }
+            }, { new: true }
+        )
+        const response = await UserSchema.findOneAndUpdate(
+            { _id: myId },
+            {
+                $pull: {
+                    waitingAddFriendResponse: theirId
+                },
+                $push: {
+                    friends: theirId
+                }
+            }, { new: true }
+        )
+        res.json(response)
+    }
     // // [POST]       /friend/request/reject`
-    // reject_request_friend = async (req, res, next) => {
-    //     const { myId, theirId } = req.body
-    //     UserSchema.findOneAndUpdate(
-    //         { _id: myId },
-    //         {
-    //             $pull: {
-    //                 waitingAddFriendResponse: theirId
-    //             }
-    //         },
-    //         { new: true }
-    //     )
-    //         .then(updated => res.json(updated))
-    // }
+    reject_request_friend = async (req, res, next) => {
+        const { myId, theirId } = req.body
+        UserSchema.findOneAndUpdate(
+            { _id: myId },
+            {
+                $pull: {
+                    waitingAddFriendResponse: theirId
+                }
+            },
+            { new: true }
+        )
+            .then(updated => res.json(updated))
+    }
 
 
 

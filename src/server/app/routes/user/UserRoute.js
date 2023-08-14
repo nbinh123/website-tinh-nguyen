@@ -25,8 +25,8 @@ router.put('/config/update', UserController.config)
 
 router.post('/friend/request', UserController.request_friend)
 router.post('/friend/request/cancel', UserController.cancel_request_friend)
-// router.post('/friend/request/accept', UserController.accept_request_friend)
-// router.post('/friend/request/reject', UserController.reject_request_friend)
+router.post('/friend/request/accept', UserController.accept_request_friend)
+router.post('/friend/request/reject', UserController.reject_request_friend)
 
 router.post('/nofication/create', UserController.create_nofication)
 router.get('/nofications/get', UserController.get_nofications)

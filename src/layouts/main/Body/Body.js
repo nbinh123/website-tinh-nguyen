@@ -32,11 +32,11 @@ function Body() {
                 </Route>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/history" element={<History/>}/>
-                {/* <Route path="/connect">
+                <Route path="/connect">
                     <Route path="find">
                         <Route path=":id/info" element={<Stranger/>} />
                     </Route>
-                </Route> */}
+                </Route>
             </Routes>
         </div>
     );
