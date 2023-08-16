@@ -1,0 +1,70 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0;
+    p{
+        margin: 0;
+    }
+    .title{
+        p{
+            margin-bottom: 30%;
+        }
+    }
+    .main {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .friendTag {
+            width: 35%;
+            border: 1.5px solid blanchedalmond;
+            border-radius: 5px;
+            display: flex;
+            position: relative;
+            // justify-content: start;
+            // align-items: center;
+            .avatar {
+                flex: 2.3;
+                aspect-ratio: 1;
+                display: flex;
+                align-items: center;
+                img {
+                    width: 100%;
+                    aspect-ratio: 1;
+                    line-height: 0;
+                    margin: 0;
+                }
+            }
+            .others{
+                flex: 7;
+                // display: flex;
+                // border: 1px solid gold;
+                padding: 5px 12px;
+                .name{
+                    p{
+                        font-weight: 500;
+                        font-size: 18px;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .friendConfigs{
+                position: absolute;
+                margin: 0;
+                padding: 3px 6px;
+                top: 0;
+                right: 0;
+                border-bottom: 1.5px solid blanchedalmond;
+                border-left: 1.5px solid blanchedalmond;
+                border-bottom-left-radius: 5px;
+                aspect-ratio: 1;
+                cursor: pointer;
+            }
+        }
+    }
+}

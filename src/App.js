@@ -25,14 +25,13 @@ function Authenication() {
     }}>
       <Header />
       <Routes>
-        <Route path='/' element={<Homepage />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>
     </div>
   )
 }
-function Main() {
+function Main() { 
   return (
     <>
       <Header />
@@ -41,7 +40,7 @@ function Main() {
   )
 }
 
-const IP = "192.168.1.5"
+const IP = "192.168.1.4"
 function App() {
 
   const [userInformations, setUserInformations] = useState(null)

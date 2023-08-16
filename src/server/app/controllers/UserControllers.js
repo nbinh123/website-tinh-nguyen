@@ -156,7 +156,7 @@ class UserController {
                 infoCurrent[nameKey] = value
             }
         }
-        // chạy hàm update
+        // chạy hàm update 
         await filter()
         // bắt đầu lưu lại bản ghi và trả về bản ghi mới
         await infoCurrent.save()
@@ -468,11 +468,6 @@ class UserController {
         )
             .then(updated => res.json(updated))
     }
-
-
-
-
-
     // // [POST]       /friend/request/accept
     accept_request_friend = async (req, res, next) => {
         const { myId, theirId } = req.body
@@ -511,14 +506,6 @@ class UserController {
         )
             .then(updated => res.json(updated))
     }
-
-
-
-
-
-
-
-
     //  [POST]      /nofication/create
     create_nofication = async (req, res, next) => {
 

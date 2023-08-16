@@ -61,9 +61,9 @@ function Shop() {
             setIsSubmit(true)
         }
         useEffect(() => {
-            if(newQuanlity === Number(quantityCurrent.current)){
+            if (newQuanlity === Number(quantityCurrent.current)) {
                 setIsSubmit(true)
-            }else{
+            } else {
                 setIsSubmit(false)
             }
         }, [newQuanlity])
@@ -120,35 +120,39 @@ function Shop() {
     })
 
     return (
-        <div className={styles.container}>
-            <div className={styles.title}>
-                <LinearText
-                    title={"Danh mục sản phẩm"}
-                    fontSize={22}
-                    colors={['red', 'blue']}
-                />
-            </div>
-            <div className={styles.main}>
-                {productList.map((tag, index) => {
-                    return <ProductTag
-                        key={tag._id}
-                        id={tag._id}
-                        remaining={tag.remaining}
-                        name={tag.name}
-                        price={tag.price}
-                        quanlity={tag.quanlity}
-                        sold={tag?.sold}
-                        type={tag?.type}
-                        img={tag?.img}
-                        isOrdered={tag.quanlity === 0 ? true : false}
-                    />
-                })}
-            </div>
-            <div onClick={goToBill} className={styles.goToBill}>
-                <LinearText
-                    title={<p>Đi tới trang thanh toán&nbsp;&nbsp;<FontAwesomeIcon style={{ color: 'black' }} icon={faArrowRightLong} /></p>}
-                />
-            </div>
+        <div className={styles.container}> 
+            {userInformations.cart.order.length !== 0 ? (
+                <>
+                    <div className={styles.title}>
+                        <LinearText
+                            title={"Danh mục sản phẩm"}
+                            fontSize={22}
+                            colors={['red', 'blue']}
+                        />
+                    </div>
+                    <div className={styles.main}>
+                        {productList.map((tag, index) => {
+                            return <ProductTag
+                                key={tag._id}
+                                id={tag._id}
+                                remaining={tag.remaining}
+                                name={tag.name}
+                                price={tag.price}
+                                quanlity={tag.quanlity}
+                                sold={tag?.sold}
+                                type={tag?.type}
+                                img={tag?.img}
+                                isOrdered={tag.quanlity === 0 ? true : false}
+                            />
+                        })}
+                    </div>
+                    <div onClick={goToBill} className={styles.goToBill}>
+                        <LinearText
+                            title={<p>Đi tới trang thanh toán&nbsp;&nbsp;<FontAwesomeIcon style={{ color: 'black' }} icon={faArrowRightLong} /></p>}
+                        />
+                    </div>
+                </>
+            ) : ""}
         </div>
     );
 }

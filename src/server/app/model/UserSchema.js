@@ -9,7 +9,7 @@ const OrderSchema = new Schema({
 //tạo bảng phác thảo để lấy api
 const User = new Schema({
     name: { type: String, default: "Người dùng" },
-    img: String,
+    avatar: { type: String, default: "https://img6.thuthuatphanmem.vn/uploads/2022/11/17/hinh-anh-do-an-chibi-cute_014006876.png"},
     sex: { type: String, default: "noneSex" },
     birth: String,
     email: String,
@@ -21,9 +21,7 @@ const User = new Schema({
     password: String,
     coin: { type: Number, default: 0 },
     cart: {
-        promoteCodes: [
-            
-        ],
+        promoteCodes: { type: Array, default: []},
         payment: {
             discounted: { type: Number, default: 0 },
             total: { type: Number, default: 0 },

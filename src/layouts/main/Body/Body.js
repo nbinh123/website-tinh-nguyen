@@ -14,6 +14,7 @@ import Contact from "./pages/contact/Contact";
 import History from "./pages/history/History";
 import Bill from "./pages/shop/Bill/Bill";
 import Stranger from "./pages/connect/stranger/Stranger";
+import Friend from "./pages/friends/Friend";
 
 function Body() {
     return (  
@@ -37,6 +38,7 @@ function Body() {
                         <Route path=":id/info" element={<Stranger/>} />
                     </Route>
                 </Route>
+                <Route path="/friends/:id" element={<Friend/>}/>
             </Routes>
         </div>
     );

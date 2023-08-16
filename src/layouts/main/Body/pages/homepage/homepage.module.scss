@@ -1,0 +1,44 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    p{
+        margin: 0;
+    }
+    .menu{
+        position: fixed;
+        left: 3%;
+        top: 13%;
+        border: 1px solid black;
+        padding: 8px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .menuWrapper{
+        border: 1px solid black;
+        width: 100%;
+        .menuTag{
+            // width: 100%;
+            padding: 13px 22px;  
+            border-bottom: 0.5px solid black;
+            cursor: pointer;
+            &:hover{
+                animation: select 0.5s 1 ease-in-out forwards;
+            }
+            &:last-child{
+                border-bottom: 0;
+            }
+            @keyframes select {
+                to{
+                    background-color: blanchedalmond;
+                }
+            }
+        }
+    }
+    .main{
+
+    }
+}
